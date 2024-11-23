@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./products.css">
+
+    <title>Products</title>
+  </head>
+  <body>
+    <form action="./payment.html">
+      <label for="bread">Bread 15</label>
+      <input type="button" id="bread" value="Add to cart"/>
+      <br/>
+      <br/>
+      <label for="milk">Milk 23</label>
+      <input type="button" id="milk" value="Add to cart"/>
+      <br/>
+      <br/>
+      <label for="gum">Gum 3</label>
+      <input type="button" id="gum" value="Add to cart"/>
+      <br/>
+      <br/>
+      <input type="submit" value="Buy Now!" id="submit-products"/>
+    </form>
+    <script>
+      let breadAmount = 0;
+      let milkAmount = 0;
+      let gumAmount = 0;
+
+      const breadButton = document.getElementById("bread");
+      const milkButton = document.getElementById("milk");
+      const gumButton = document.getElementById("gum");
+      const submitButton = document.getElementById("submit-products");
+
+      breadButton.addEventListener('click', ()=>{
+        breadAmount+=1;
+        console.log("Bread amount: ", breadAmount)
+      })
+
+      milkButton.addEventListener('click', ()=>{
+        milkAmount+=1;
+        console.log("Milk amount: ", milkAmount)
+      })
+
+      gumButton.addEventListener('click', ()=>{
+        gumAmount+=1;
+        console.log("Gum amount: ", gumAmount)
+      })
+
+      submitButton.addEventListener('click', ()=>{
+        localStorage.setItem("bread", breadAmount);
+        localStorage.setItem("milk", milkAmount);
+        localStorage.setItem("gum", gumAmount);
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./payment.css">
+
+    <title>Approve Payment</title>
+</head>
+<body id="paymentdesign">
+    <h1> SV-shop</h1>
+    <form action="">
+   <p><p>Total products - <span id="total-products">0</span></p>
+   <p><p>Total price - <span id="total-price">0</span></p>
+   <button  onClick="payment()">Approve</button>
+   <script src="./scripts/main.js" ></script>
+   <script>
+        const breadAmount = parseInt(localStorage.getItem("bread"));
+        const milkAmount = parseInt(localStorage.getItem("milk"));
+        const gumAmount = parseInt(localStorage.getItem("gum"));
+
+        const totalProducts = breadAmount + milkAmount + gumAmount;
+
+        const breadPrice = 15 * breadAmount;
+        const milkPrice = 23 * milkAmount;
+        const gumPrice = 3 * gumAmount;
+        const totalPrice = breadPrice + milkPrice + gumPrice;
+
+        document.getElementById("total-products").innerText = totalProducts;
+        document.getElementById("total-price").innerText = totalPrice;
+    </script>
+</body>
+</html>
